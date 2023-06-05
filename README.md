@@ -64,12 +64,12 @@ The UI is built with React, and showcases the advantages the `mapsocket` library
 ## Effort estimation
 Estimated workload in hours for each identified task in the scope.
 
-| Task                              | Issue | Estimate |
-| --------------------------------- | ----- | -------- |
-| `mapsocket` server implementation | #1    | tbd.     |
-| `mapsocket` client implementation | #2    | tbd.     |
-| server demo implementation        | #3    | tbd.     |
-| client demo implementation        | #4    | tbd.     |
-| documentation and user manual     | #5    | tbd.     |
+| Task                              | Issue                                             | Estimate |
+| --------------------------------- | ------------------------------------------------- | -------- |
+| `mapsocket` server implementation | [#1](https://github.com/wlchs/mapsocket/issues/1) | tbd.     |
+| `mapsocket` client implementation | [#2](https://github.com/wlchs/mapsocket/issues/2) | tbd.     |
+| server demo implementation        | [#3](https://github.com/wlchs/mapsocket/issues/3) | tbd.     |
+| client demo implementation        | [#4](https://github.com/wlchs/mapsocket/issues/4) | tbd.     |
+| documentation and user manual     | [#5](https://github.com/wlchs/mapsocket/issues/5) | tbd.     |
 
 More information about the individual tasks can be found under their respective GitHub issues.

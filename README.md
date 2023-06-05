@@ -3,6 +3,9 @@ Request-response mapped WebSocket implementation.
 
 **Don't use this library in production code, it is only intended as a coding challenge and is therefore not complete, nor properly tested!**
 
+## User manual
+*coming soon...*
+
 ## Requirements
 The project must fulfil the following requirements:
 * implementation of a Node.JS library that provides request-response mapping on top of WebSockets
@@ -16,11 +19,13 @@ There are two additional constrations for the task:
 First of all, the requirements have to be broken down into smaller units of work. After analysis, the following individual tasks have been identified:
 
 * implementation of the MapSocket Node.JS library
+    * server logic
+    * client logic
 * implementation of an example project that uses MapSocket on the server-side
 * implementation of an example project that uses MapSocket on the client-side
 * write documentation and user-manual
 
-## MapSocket library
+### MapSocket library
 The two main features that the library offers are the `MapSocketServer` and the `MapSocketClient`. 
 
 The server allows the user to open a socket listening for requests from the subscribed client(s) and respond to them. Users can define custom handler methods that specifie how different requests must be resolved. 
@@ -45,15 +50,26 @@ mc.invoke('sum', {x: 1, y: 2}).then(result => {
 })
 ```
 
-## Server demo
+### Server demo
 The example server implementation imports the `mapsocket` library as if it was an external dependency published in the `npm` registry. 
 
 It creates a new `MapSocketServer` and defines some simple handler methods, like the one above.
 
-## Client demo
+### Client demo
 The example client implementation, similarly to the server implementation, imports the `mapsocket` library and uses the `MapSocketClient` to connect to the previously created socket. 
 
 The UI is built with React, and showcases the advantages the `mapsocket` library gives over just simply using `WebSockets`. In this example, the client dispatches numerous requests simultaneously, to which a procedure is implemented by the server that introduces a random delay before sending back a response. This random delay is supposed to simulate an "expensive" calculation / process that takes a while to complete in a real-world scenario. After receiving the responses, the UI displays the result by matching the dispatched request parameters with their respective responses.
 
-## User manual
-*coming soon...*
+
+## Effort estimation
+Estimated workload in hours for each identified task in the scope.
+
+| Task                              | Issue | Estimate |
+| --------------------------------- | ----- | -------- |
+| `mapsocket` server implementation | #1    | tbd.     |
+| `mapsocket` client implementation | #2    | tbd.     |
+| server demo implementation        | #3    | tbd.     |
+| client demo implementation        | #4    | tbd.     |
+| documentation and user manual     | #5    | tbd.     |
+
+More information about the individual tasks can be found under their respective GitHub issues.

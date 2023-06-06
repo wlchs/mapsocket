@@ -1,0 +1,23 @@
+{
+  "name": "mapsocket",
+  "version": "1.0.0",
+  "description": "Lightweight response-mapped websocket implementation.",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap"
+  },
+  "author": "wlchs",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/ws": "8.5.4",
+    "microbundle": "0.15.1",
+    "prettier": "2.8.8",
+    "typescript": "5.1.3"
+  },
+  "dependencies": {
+    "ws": "8.13.0"
+  }
+}

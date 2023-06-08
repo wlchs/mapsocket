@@ -16,6 +16,41 @@ Request-response mapped WebSocket implementation.
 4. [Effort estimation](#effort-estimation)
 
 ## User manual
+The following sections will show how to import and use the library in your own application. 
+Additionally, it gives step-by-step instructions about running the example solution provided with the project.
+
+### Using the library
+If this library was production-ready, it would be published to npm and could be installed with this command: 
+```shell
+npm i mapsocket
+```
+Let's imagine for a second that this is the case, and the library has been successfully imported in a project.
+
+The module exports two main classes, the `MapSocketServer` and the `MapSocketClient`. 
+The `MapSocketServer` can be used the following way:
+
+```ts
+import { MapSocketServer } from "mapsocket";
+
+const ms = new MapSocketServer(8080);
+ms.on("<event name>", async (params) => {
+    // return something
+})
+```
+
+Similarly, the client can be used to dispatch calls to a `MapSocketServer` in the following way:
+
+```ts
+import { MapSocketClient } from "mapsocket";
+
+const mc = new MapSocketClient(8080);
+mc.invoke("<event name>", [1, 2, 3]).then(result => {
+    // do something with the result
+});
+
+```
+
+### Building the library
 By following the steps below, you will be able to test the `mapsocket` library locally
 by setting up and running the implemented example projects.
 
@@ -31,6 +66,19 @@ this is not the case, you'll have to install it (ideally version 18). You can fi
 
 ```shell
 brew install node@18
+```
+
+Since the library is not published to npm, it has to be built before use.
+
+```shell
+# Navigate to the mapsocket library inside the repository
+cd mapsocket
+
+# Install dependencies
+npm i
+
+# Build the library
+npm run build
 ```
 
 ### Starting the server

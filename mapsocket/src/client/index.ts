@@ -98,6 +98,7 @@ export class MapSocketClient {
    * Opens a WebSocket connection on demand and register message handler
    */
   public connect() {
+    this.isOpen = false;
     this.messageCount = 0;
     this.messageInboundQueue = {};
     this.messageOutboundQueue = [];

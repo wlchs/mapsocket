@@ -2,7 +2,7 @@ import { MapSocketRequest, MapSocketResponse } from "src/common/types";
 import { WebSocketServer, RawData, WebSocket } from "ws";
 
 /**
- * Minimalisting request-response mapped websocket implementation.
+ * Minimalistic request-response mapped websocket server implementation.
  */
 export class MapSocketServer {
   private webSocketServer: WebSocketServer;

@@ -27,10 +27,7 @@ export class MapSocketServer {
    * @param name procedure name, used for procedure identification, therefore must be unique
    * @param procedure promise that is to be executed upon client request
    */
-  public applyProcedure(
-    name: string,
-    procedure: (params: any) => Promise<any>
-  ) {
+  public on(name: string, procedure: (params: any) => Promise<any>) {
     this.procedureMap[name] = procedure;
   }
 

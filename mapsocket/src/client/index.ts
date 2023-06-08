@@ -1,5 +1,4 @@
 import { MapSocketRequest, MapSocketResponse } from "src/common/types";
-import { RawData, WebSocket } from "ws";
 
 /**
  * Minimalistic request-response mapped websocket client implementation.
@@ -72,7 +71,7 @@ export class MapSocketClient {
    * Message handler method to receive responses from the server
    * @param data message body
    */
-  private onMessageHandler(data: RawData) {
+  private onMessageHandler(data) {
     /* Parse response body and invoke the resolve method belonging to the same request */
     const responseBody: MapSocketResponse = JSON.parse(data.toString());
     const resolve = this.messageInboundQueue[responseBody.requestId];
@@ -103,8 +102,8 @@ export class MapSocketClient {
     this.messageInboundQueue = {};
     this.messageOutboundQueue = [];
     this.webSocketClient = new WebSocket(`ws://localhost:${this.port}`);
-    this.webSocketClient.on("open", this.onOpenHandler.bind(this));
-    this.webSocketClient.on("message", this.onMessageHandler.bind(this));
+    this.webSocketClient.onopen = this.onOpenHandler.bind(this);
+    this.webSocketClient.onmessage = this.onMessageHandler.bind(this);
   }
 
   /**

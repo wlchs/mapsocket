@@ -7,6 +7,12 @@ import { Card } from "./components/Card";
 
 function App() {
   const [trigger, setTrigger] = useState<number>(0);
+  const CARD_COUNT = 4;
+
+  /* Create a predefined number of cards */
+  const cards = [...Array(CARD_COUNT).keys()].map((_, key) => (
+    <Card cardId={key + 1} key={key} trigger={trigger} />
+  ));
 
   return (
     <>
@@ -20,12 +26,13 @@ function App() {
           </a>
         </div>
         <h1>MapSocket</h1>
+        <p>
+          Click "Send requests" at the bottom of the page to dispatch every call
+          at once, or click on a single card to dispatch a request
+          independently.
+        </p>
       </div>
-      <div className="cards">
-        {[...Array(4).keys()].map((_, key) => (
-          <Card cardId={key + 1} key={key} trigger={trigger} />
-        ))}
-      </div>
+      <div className="cards">{cards}</div>
       <div>
         <button onClick={() => setTrigger(trigger + 1)}>Send requests</button>
       </div>

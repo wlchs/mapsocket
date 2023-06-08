@@ -7,6 +7,7 @@ export function Card(props: { cardId: number; trigger: number }) {
   const [response, setResponse] = useState<{ sum: number; time: number }>();
   const [loading, setLoading] = useState<boolean>(false);
 
+  /* Generate random input params */
   useEffect(() => {
     const paramCount = Math.floor(Math.random() * 3) + 2;
     setInput(
@@ -14,14 +15,16 @@ export function Card(props: { cardId: number; trigger: number }) {
     );
   }, []);
 
-  const sendRequest = useCallback(() => {
+  /* Dispatch a remote calculation call */
+  const sendRequest = useCallback(async () => {
     setResponse(undefined);
     setLoading(true);
-    dispatchRequest(input)
-      .then(setResponse)
-      .then(() => setLoading(false));
+    const res = await dispatchRequest(input);
+    setResponse(res);
+    setLoading(false);
   }, [input]);
 
+  /* Dispatch a request if the trigger increments */
   useEffect(() => {
     if (props.trigger > 0) {
       sendRequest();

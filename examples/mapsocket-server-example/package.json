@@ -1,0 +1,16 @@
+{
+  "name": "mapsocket-server-example",
+  "version": "1.0.0",
+  "description": "Example mapsocket server implementation",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "author": "wlchs",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "10.9.1"
+  },
+  "dependencies": {
+    "mapsocket": "file:../../mapsocket"
+  }
+}

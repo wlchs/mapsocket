@@ -3,6 +3,8 @@ Request-response mapped WebSocket implementation.
 
 **Don't use this library in production code! It is only intended as a coding challenge and is therefore not complete, nor properly tested!**
 
+---
+
 ## Table of contents
 1. [User manual](#user-manual)
    1. [Using the library](#using-the-library)
@@ -16,6 +18,8 @@ Request-response mapped WebSocket implementation.
    2. [Server demo](#server-demo)
    3. [Client demo](#client-demo)
 4. [Effort estimation](#effort-estimation)
+
+---
 
 ## User manual
 The following sections will show how to import and use the library in your own application. 
@@ -144,6 +148,8 @@ The system gives feedback about the received requests:
 
 ![Server demo log](./public/server_log.gif "Server demo log")
 
+---
+
 ## Requirements
 The project must fulfil the following requirements:
 * implementation of a Node.JS library that provides request-response mapping on top of WebSockets
@@ -152,6 +158,8 @@ The project must fulfil the following requirements:
 There are two additional constraints for the task:
 * use the [ws](https://github.com/websockets/ws) library on the server-side
 * no additional external dependencies are allowed, except those necessary for building / testing
+
+---
 
 ## Scope
 First of all, the requirements have to be broken down into smaller units of work.
@@ -206,6 +214,7 @@ random delay before sending back a response. This random delay is supposed to si
 while to complete in a real-world scenario. After receiving the responses, the UI displays the result by matching the dispatched request 
 parameters with their respective responses.
 
+---
 
 ## Effort estimation
 Estimated workload in hours for each identified task in the scope.

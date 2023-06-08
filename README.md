@@ -5,9 +5,11 @@ Request-response mapped WebSocket implementation.
 
 ## Table of contents
 1. [User manual](#user-manual)
-   1. [Starting the server](#starting-the-server) 
-   2. [Starting the client](#starting-the-client) 
-   3. [System in action](#system-in-action)
+   1. [Using the library](#using-the-library)
+   2. [Building the library](#building-the-library)
+   3. [Starting the server](#starting-the-server) 
+   4. [Starting the client](#starting-the-client) 
+   5. [System in action](#system-in-action)
 2. [Requirements](#requirements)
 3. [Scope](#mapsocket-library)
    1. [MapSocket library](#mapsocket-library)

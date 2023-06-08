@@ -1,9 +1,8 @@
 import { useState } from "react";
-
-import gitHubLogo from "./assets/github.svg";
-import lbLogo from "./assets/lb.svg";
+import gitHubLogo from "../assets/github.svg";
+import lbLogo from "../assets/lb.svg";
 import "./App.css";
-import { Card } from "./components/Card";
+import { Card } from "./Card";
 
 function App() {
   const [trigger, setTrigger] = useState<number>(0);

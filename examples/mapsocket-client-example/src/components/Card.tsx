@@ -31,9 +31,18 @@ export function Card(props: { cardId: number; trigger: number }) {
     }
   }, [props.trigger, sendRequest]);
 
+  /* Card styles */
+  const cardStyles = [
+    "card",
+    loading ? "loading" : "",
+    response ? "selected" : "",
+  ]
+    .filter((s) => s !== "")
+    .join(" ");
+
   return (
     <div>
-      <div className="card" onClick={sendRequest}>
+      <div className={cardStyles} onClick={sendRequest}>
         <h2>Card: {props.cardId}</h2>
         <p>
           <b>Parameters: </b>

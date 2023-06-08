@@ -40,6 +40,7 @@ export class MapSocketServer {
   private onMessageHandler(ws: WebSocket) {
     return async (data: RawData) => {
       const requestBody: MapSocketRequest = JSON.parse(data.toString());
+      console.log("Received procedure call with body", requestBody);
       const procedure = this.procedureMap[requestBody.procedure];
 
       const response = await procedure(requestBody.params);

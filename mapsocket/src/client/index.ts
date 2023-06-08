@@ -71,9 +71,9 @@ export class MapSocketClient {
    * Message handler method to receive responses from the server
    * @param data message body
    */
-  private onMessageHandler(data) {
+  private onMessageHandler(data: MessageEvent) {
     /* Parse response body and invoke the resolve method belonging to the same request */
-    const responseBody: MapSocketResponse = JSON.parse(data.toString());
+    const responseBody: MapSocketResponse = JSON.parse(data.data.toString());
     const resolve = this.messageInboundQueue[responseBody.requestId];
 
     resolve(responseBody.response);
